@@ -1,7 +1,21 @@
-public class task
-{
- public static void main(String[] args)
- {
-  System.out.println("Hello webhook test!");
- }
+pipeline {
+    agent any
+    stages {
+        stage('Preparation') {
+            steps {
+               checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+    }
 }
+
