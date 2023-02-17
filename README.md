@@ -1,1 +1,1 @@
-# webhook-gitlab
+# webhook-github
